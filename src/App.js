@@ -1,18 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './css/App.css';
-import './css/style.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUserAlt } from '@fortawesome/free-solid-svg-icons'
+import {faShoppingCart} from "@fortawesome/free-solid-svg-icons";
+
+// import './css/style.css'
 
 function App() {
     return (
         <div className="App">
-            <div className='App-header'>
-                <header className="header">
-                    <button className='flex-item btn btn-success'> Hello World!</button>
-                </header>
-            </div>
+            <header className="App-header">
+                <a href='#' className='navbar-brand ml-5 logo'>Logo</a>
+                <div className='menu'>
+                    <nav className='ml-auto'>
+                        <ul>
+                            <li className='mr-4'><a href='#' className='a'><FontAwesomeIcon icon={faShoppingCart}/>Basket</a></li>
+                            <li className='mr-4'><a href='#' className='a'><FontAwesomeIcon icon={faUserAlt}/>Login</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
         </div>
-);
+    );
 }
 
 export default App;

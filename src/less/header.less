@@ -1,42 +1,67 @@
 @main-width: 960px;
-@main-bgcolor: #303030;
-@main-color: #ffffff;
+@main-bgcolor: #282c34;
+@main-color: #999999;
 @main-display: flex;
 @main-margin: 0 auto;
 @main-text-decoration: none;
 @main-ul-style: none;
-@main-text: 14px Times;
-@small-text: 10px Times #acacac;
+@main-text: 14px Ubuntu;
+@small-text: 10px Ubuntu #acacac;
 
 .App-header {
-  background-color: #282c34;
+  background-color: @main-bgcolor;
   min-height: 12vh;
-  display: flex;
-  flex-direction: column;
+  width: 100%;
+  display: @main-display;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
 
-.menu {
-  display: @main-display;
-  width: 100%;
-  justify-content: center;
-  background-color: @main-bgcolor;
-  font: @main-text;
-  ul {
+  .logo {
+    color: @main-color;
+  }
+
+  .logo:hover {
+    color: #ffffff;
+  }
+
+  .menu {
     display: @main-display;
-    width: @main-width;
-    margin: @main-margin;
-    justify-content: space-around;
-    list-style: @main-ul-style;
-    li {
-      a {
-        color: @main-color;
-        text-decoration: @main-text-decoration;
-        &:active {
+    width: 100%;
+    justify-content: center;
+    background-color: @main-bgcolor;
+    font: @main-text;
+    ul {
+      display: @main-display;
+      width: 70%;
+      margin: @main-margin;
+      justify-content: flex-end;
+      list-style: @main-ul-style;
+
+      li {
+        a {
           color: @main-color;
+          text-decoration: @main-text-decoration;
+
+          &:hover {
+            color: #ffffff;
+          }
+          &:active {
+            color: #ffffff;
+          }
+        }
+        button {
+          color: @main-color;
+          text-decoration: @main-text-decoration;
+
+          &:hover {
+            color: #ffffff;
+          }
+          &:active {
+            color: #ffffff;
+          }
         }
       }
     }
