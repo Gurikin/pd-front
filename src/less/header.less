@@ -1,0 +1,44 @@
+@main-width: 960px;
+@main-bgcolor: #303030;
+@main-color: #ffffff;
+@main-display: flex;
+@main-margin: 0 auto;
+@main-text-decoration: none;
+@main-ul-style: none;
+@main-text: 14px Times;
+@small-text: 10px Times #acacac;
+
+.App-header {
+  background-color: #282c34;
+  min-height: 12vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.menu {
+  display: @main-display;
+  width: 100%;
+  justify-content: center;
+  background-color: @main-bgcolor;
+  font: @main-text;
+  ul {
+    display: @main-display;
+    width: @main-width;
+    margin: @main-margin;
+    justify-content: space-around;
+    list-style: @main-ul-style;
+    li {
+      a {
+        color: @main-color;
+        text-decoration: @main-text-decoration;
+        &:active {
+          color: @main-color;
+        }
+      }
+    }
+  }
+}
