@@ -1,7 +1,7 @@
 import React from 'react';
 
 class Config extends React.Component {
-    state = {baseUrl: "http://dm.loc/images/logo.png"}
+    state = {baseUrl: "http://dm.loc/"}
 
     render() {
         return;

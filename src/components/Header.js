@@ -1,6 +1,5 @@
 import React from 'react';
 import Nav from "./Nav";
-import Config from "../config";
 import './../css/style.css'
 
 function Header() {
