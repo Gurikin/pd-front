@@ -5,8 +5,9 @@
 @main-margin: 0 auto;
 @main-text-decoration: none;
 @main-ul-style: none;
-@header-icon-text: 22px Roboto;
-@main-text: 16px Roboto;
+@header-icon-text: 16px Roboto;
+@header-icon-color: #ef4517;
+@main-text: 14px Roboto;
 @small-text: 12px Roboto #acacac;
 
 .header {
@@ -42,8 +43,7 @@
     justify-content: center;
     background-color: @main-bgcolor;
     font: @main-text;
-    ul {
-      font: @header-icon-text;
+    ul {      
       display: @main-display;
       width: 70%;
       margin: @main-margin;
@@ -52,25 +52,15 @@
 
       li {
         a {
+          font: @header-icon-text;
           color: @main-color;
           text-decoration: @main-text-decoration;
 
           &:hover {
-            color: #ffffff;
+            color: @header-icon-color;
           }
           &:active {
-            color: #ffffff;
-          }
-        }
-        button {
-          color: @main-color;
-          text-decoration: @main-text-decoration;
-
-          &:hover {
-            color: #ffffff;
-          }
-          &:active {
-            color: #ffffff;
+            color: @header-icon-color;
           }
         }
       }

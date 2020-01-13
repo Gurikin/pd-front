@@ -7,7 +7,7 @@ function Header() {
         <header className="header">
             <div className='main-container'>
                 <a href='/' className='navbar-brand ml-5 logo'>
-                    <img src='/images/logo.png' alt=''/>
+                    <img src='/images/menu/logo.png' alt=''/>
                 </a>
                 <Nav/>
             </div>

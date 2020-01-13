@@ -9,13 +9,13 @@ function Nav() {
             <nav className='ml-auto'>
                 <ul>
                     <li className='mr-4'>
-                        <a href='./#' className='a'>
-                            <FontAwesomeIcon icon={faShoppingCart}/>
+                        <a href='./cart' className='a'>
+                            <FontAwesomeIcon icon={faShoppingCart} size="2x"/>cart
                         </a>
                     </li>
                     <li className='mr-4'>
-                        <a href='./#' className='a'>
-                            <FontAwesomeIcon icon={faUserAlt}/>
+                        <a href='./login' className='a'>
+                            <FontAwesomeIcon icon={faUserAlt}  size="2x"/>login
                         </a>
                     </li>
                 </ul>

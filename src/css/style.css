@@ -28,7 +28,7 @@ code {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #999999;
 }
 
 .header .logo {
@@ -44,11 +44,10 @@ code {
   width: 100%;
   justify-content: center;
   background-color: #231F20;
-  font: 16px Roboto;
+  font: 14px Roboto;
 }
 
 .header .menu ul {
-  font: 22px Roboto;
   display: flex;
   width: 70%;
   margin: 0 auto;
@@ -57,27 +56,15 @@ code {
 }
 
 .header .menu ul li a {
+  font: 16px Roboto;
   color: #999999;
   text-decoration: none;
 }
 
 .header .menu ul li a:hover {
-  color: #ffffff;
+  color: #ef4517;
 }
 
 .header .menu ul li a:active {
-  color: #ffffff;
-}
-
-.header .menu ul li button {
-  color: #999999;
-  text-decoration: none;
-}
-
-.header .menu ul li button:hover {
-  color: #ffffff;
-}
-
-.header .menu ul li button:active {
-  color: #ffffff;
+  color: #ef4517;
 }
