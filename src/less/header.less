@@ -1,14 +1,15 @@
 @main-width: 960px;
-@main-bgcolor: #282c34;
+@main-bgcolor: #231F20;
 @main-color: #999999;
 @main-display: flex;
 @main-margin: 0 auto;
 @main-text-decoration: none;
 @main-ul-style: none;
-@main-text: 14px Ubuntu;
-@small-text: 10px Ubuntu #acacac;
+@header-icon-text: 22px Roboto;
+@main-text: 16px Roboto;
+@small-text: 12px Roboto #acacac;
 
-.App-header {
+.header {
   background-color: @main-bgcolor;
   min-height: 12vh;
   width: 100%;
@@ -16,8 +17,16 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+  .main-container {
+    width: @main-width;
+    display: @main-display;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: @main-color;
+  }
 
   .logo {
     color: @main-color;
@@ -34,6 +43,7 @@
     background-color: @main-bgcolor;
     font: @main-text;
     ul {
+      font: @header-icon-text;
       display: @main-display;
       width: 70%;
       margin: @main-margin;

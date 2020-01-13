@@ -1,26 +1,6 @@
 .App {
   text-align: center;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
@@ -31,10 +11,18 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
-.App-header {
-  background-color: #282c34;
+.header {
+  background-color: #231F20;
   min-height: 12vh;
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.header .main-container {
+  width: 960px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -43,23 +31,24 @@ code {
   color: white;
 }
 
-.App-header .logo {
+.header .logo {
   color: #999999;
 }
 
-.App-header .logo:hover {
+.header .logo:hover {
   color: #ffffff;
 }
 
-.App-header .menu {
+.header .menu {
   display: flex;
   width: 100%;
   justify-content: center;
-  background-color: #282c34;
-  font: 14px Ubuntu;
+  background-color: #231F20;
+  font: 16px Roboto;
 }
 
-.App-header .menu ul {
+.header .menu ul {
+  font: 22px Roboto;
   display: flex;
   width: 70%;
   margin: 0 auto;
@@ -67,28 +56,28 @@ code {
   list-style: none;
 }
 
-.App-header .menu ul li a {
+.header .menu ul li a {
   color: #999999;
   text-decoration: none;
 }
 
-.App-header .menu ul li a:hover {
+.header .menu ul li a:hover {
   color: #ffffff;
 }
 
-.App-header .menu ul li a:active {
+.header .menu ul li a:active {
   color: #ffffff;
 }
 
-.App-header .menu ul li button {
+.header .menu ul li button {
   color: #999999;
   text-decoration: none;
 }
 
-.App-header .menu ul li button:hover {
+.header .menu ul li button:hover {
   color: #ffffff;
 }
 
-.App-header .menu ul li button:active {
+.header .menu ul li button:active {
   color: #ffffff;
 }
