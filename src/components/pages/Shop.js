@@ -12,21 +12,21 @@ class Shop extends React.Component {
     }
 
     componentDidMount() {
-        fetch('http://pd.loc/api/v1/getPizzas',
-            { mode: 'no-cors'})
+        fetch('http://pd.loc/api/v1/getPizzas')
             .then(results => {
                 return results.json();
             })
             .then(data => {
-                let products = data.results.map((product) => {
+                let products = data.map((product) => {
                     return (
-                        <div key={product.id}>
-                            <Product />
-                        </div>
+                        <div>
+                            <Product id={product.id} name={product.name} price={product.price} imgSrc={product.image_url}/>
+                        </div>                        
                     )
                 })
                 this.setState({ products: products });
-                console.log("state", this.state.products)
+                console.log("state", this.state.products);
+                // console.log("data", data);
             }).catch(error => {
                 console.log(error);
             });
