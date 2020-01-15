@@ -5,7 +5,7 @@ import './../css/style.css'
 function Header() {
     return (
         <header className="header">
-            <div className='main-container'>
+            <div className='header-container'>
                 <a href='/' className='navbar-brand ml-5 logo'>
                     <img src='/images/menu/logo.png' alt=''/>
                 </a>

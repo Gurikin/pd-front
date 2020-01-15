@@ -1,6 +1,16 @@
 .App {
   text-align: center;
 }
+
+.App .main-container {
+  background-color: #231F20;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: #999999;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
@@ -21,7 +31,7 @@ code {
   justify-content: center;
 }
 
-.header .main-container {
+.header .header-container {
   width: 960px;
   display: flex;
   flex-direction: row;
@@ -67,4 +77,23 @@ code {
 
 .header .menu ul li a:active {
   color: #ef4517;
+}
+.product {
+  width: 500px;
+  height: 250px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  font-size: calc(2vh);
+  color: #999999;
+}
+.shop-container {
+  background-color: #231F20;
+  width: 1200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  flex-flow: wrap;
 }

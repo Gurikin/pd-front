@@ -34,11 +34,8 @@ class Shop extends React.Component {
 
     render() {
         return (
-            <div className='container'>
-                <h1>Shop page</h1>
-                <div>
-                    {this.state.products}
-                </div>
+            <div className='shop-container'>
+                {this.state.products}
             </div>
 
         );

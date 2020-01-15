@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class Product extends React.Component {
     constructor(props) {
         super(props);
@@ -19,12 +18,13 @@ class Product extends React.Component {
         const sectionStyle = {
             backgroundImage: 'url('+this.state.imgSrc+')'
         };
+        const baseUrl = 'http://dm.loc/';
         return (            
-            <div className='product' id={this.state.id} style={sectionStyle}>
-                <div className='navbar'>
-                    <h4 className="flex-item">{this.state.name}</h4>
-                    <h5 className="flex-item">{this.state.price}$</h5>
-                </div>
+            <div className='product m-3' id={this.state.id} style={sectionStyle}>
+                <h4 className="">{this.state.name}</h4>
+                <button className="add-to-cart" href={baseUrl+"cart/add/"+this.state.id}>
+                    {this.state.price}$
+                </button>
             </div>
         );
     }

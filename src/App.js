@@ -1,4 +1,5 @@
 import React from 'react';
+import './css/style.css'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Shop from './components/pages/Shop'
@@ -12,11 +13,13 @@ function App() {
         <Router>
             {/* <Redirect exact from="/" to="shop" /> */}
             <div className="App">
+                <Header />
                 <div className='main-container'>
-                    <Header />
-                    <Route path='/' exact component={Shop} />
-                    <Route path='/cart' component={Cart} />
-                    <Route path='/login' component={Login} />
+                    <Switch>
+                        <Route path='/' exact component={Shop} />
+                        <Route path='/cart' component={Cart} />
+                        <Route path='/login' component={Login} />
+                    </Switch>
                 </div>
             </div>
         </Router>
