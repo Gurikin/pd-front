@@ -9,7 +9,7 @@ function Header() {
                 <a href='/' className='navbar-brand ml-5 logo'>
                     <img src='/images/menu/logo.png' alt=''/>
                 </a>
-                <Nav/>
+                <Nav />
             </div>
         </header>
     );
