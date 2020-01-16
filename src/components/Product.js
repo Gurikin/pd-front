@@ -1,4 +1,5 @@
 import React from 'react';
+import ButtonWithGetAction from './ButtonWithGetAction'
 
 class Product extends React.Component {
     constructor(props) {
@@ -12,21 +13,19 @@ class Product extends React.Component {
     }
 
     componentDidMount() {
+        // id={this.state.id} 
     }
 
     render() {
         const sectionStyle = {
             backgroundImage: 'url(' + this.state.imgSrc + ')'
         };
-        const baseUrl = 'http://dm.loc/';
         return (
-            <div className='product m-3' id={this.state.id} style={sectionStyle}>
+            <div className='product m-3' style={sectionStyle} id={this.state.id}>
                 <div className="title pull-left">
                     {this.state.name}
                 </div>
-                <button className="add-to-cart pull-right" href={baseUrl + "cart/add/" + this.state.id}>
-                    {this.state.price}$
-                </button>
+                <ButtonWithGetAction className="add-to-cart pull-right" id={this.state.id} price={this.state.price} />
             </div>
         );
     }

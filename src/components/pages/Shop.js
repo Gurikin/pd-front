@@ -1,14 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect} from 'react';
 import Product from '../Product'
-// import './css/style.css'
 
 class Shop extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             products: [],
-        };
-        this.componentDidMount.bind(this);
+        };        
     }
 
     componentDidMount() {
@@ -19,7 +17,7 @@ class Shop extends React.Component {
             .then(data => {
                 let products = data.map((product) => {
                     return (
-                        <div>
+                        <div key={product.id}>
                             <Product id={product.id} name={product.name} price={product.price} imgSrc={product.image_url}/>
                         </div>                        
                     )
