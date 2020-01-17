@@ -5,25 +5,30 @@ import Header from './components/Header'
 import Shop from './components/pages/Shop'
 import Cart from './components/pages/Cart'
 import Login from './components/pages/Login'
+import { Cookies, useCookies, withCookies } from 'react-cookie'
 
-// import './css/style.css'
+class App extends React.Component {
 
-function App() {
-    return (
-        <Router>
-            {/* <Redirect exact from="/" to="shop" /> */}
-            <div className="App">
-                <Header />
-                <div className='main-container'>
-                    <Switch>
-                        <Route path='/' exact component={Shop} />
-                        <Route path='/cart' component={Cart} />
-                        <Route path='/login' component={Login} />
-                    </Switch>
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <Router>
+                <div className="App">
+                    <Header />
+                    <div className='main-container'>
+                        <Switch>
+                            <Route path='/' exact component={Shop} />
+                            <Route path='/cart' component={Cart} />
+                            <Route path='/login' component={Login} />
+                        </Switch>
+                    </div>
                 </div>
-            </div>
-        </Router>
-    );
+            </Router>
+        );
+    }
 }
 
-export default App;
+export default withCookies(App);

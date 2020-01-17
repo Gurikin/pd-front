@@ -19,8 +19,9 @@ class ButtonWithGetAction extends React.Component {
 
     addToCart(id) {
         const baseUrl = 'http://pd.loc/';        
-        fetch(baseUrl + 'api/v1/cart/add/' + id)
+        fetch(baseUrl + 'api/v1/cart/add/' + id, {headers: {APP_KEY: 'base64:1aBZfjqwY3STKebSIMVGTUhlupW6x4nHk1uLw4EBvho='}})
             .then(results => {
+                console.log(results.headers.keys)
                 return results.json();
             })
             .then(data => {
