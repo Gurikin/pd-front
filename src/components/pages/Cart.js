@@ -1,7 +1,14 @@
 import React from 'react';
-// import './css/style.css'
 
 class Cart extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            cart: props.cart
+        };
+    }
+
     render() {
         return (
             <h1>Cart page</h1>

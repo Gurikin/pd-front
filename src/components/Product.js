@@ -25,7 +25,7 @@ class Product extends React.Component {
                 <div className="title pull-left">
                     {this.state.name}
                 </div>
-                <ButtonWithGetAction className="add-to-cart pull-right" id={this.state.id} price={this.state.price} />
+                <ButtonWithGetAction className="add-to-cart pull-right" product={this}/>
             </div>
         );
     }

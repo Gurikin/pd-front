@@ -1,35 +1,48 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
 import Price from './Price';
+import Cart from "./models/Cart";
+import Product from "./Product";
 
 class ButtonWithGetAction extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            id: props.id,
-            price: props.price,
-            style: props.className,
-            cart: null
+            id: props.product.props.id,
+            price: props.product.props.price,
+            product: props.product,
+            style: props.className
         };
         this.addToCart = this.addToCart.bind(this);
     }
 
     componentDidMount() {
+        this.setState({
+            id: this.state.product.props.id,
+            price: this.state.product.props.price
+        });
     }
 
     addToCart(id) {
-        const baseUrl = 'http://pd.loc/';        
-        fetch(baseUrl + 'api/v1/cart/add/' + id, {headers: {APP_KEY: 'base64:1aBZfjqwY3STKebSIMVGTUhlupW6x4nHk1uLw4EBvho='}})
-            .then(results => {
-                console.log(results.headers.keys)
-                return results.json();
-            })
-            .then(data => {
-                console.log(data);
-            })
-            .catch(error => {
-                console.log(error);
-            });         
+        let oldCart = JSON.parse(localStorage.getItem('cart'));
+        // console.log('cart before adding ' + localStorage.getItem('cart'));
+        let cart = new Cart(oldCart);
+        let product = new Product(this.state.product.props);
+        cart.addProduct(product);
+        console.log(cart);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        // const baseUrl = 'http://pd.loc/';
+        // fetch(baseUrl + 'api/v1/cart/add/' + id, {})
+        //     .then(results => {
+        //         console.log(results.headers.keys)
+        //         return results.json();
+        //     })
+        //     .then(data => {
+        //         console.log(data);
+        //     })
+        //     .catch(error => {
+        //         console.log(error);
+        //     });
     }
 
     render() {
