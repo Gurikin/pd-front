@@ -31,10 +31,10 @@ class ButtonWithGetAction extends React.Component {
         let cart = new Cart(oldCart);
         let product = new Product(this.state.product.props);
         cart.addProduct(product);
-        console.log(cart);
         const baseUrl = 'http://pd.loc/';
         // let response = await Axios.post(baseUrl + 'api/v1/cart/add/' + id,JSON.stringify(cart));
         let token = (await Axios.get(baseUrl)).data;
+        console.log(token);
 
         await fetch(baseUrl + 'api/v1/cart/add/' + id,
             {
@@ -43,25 +43,18 @@ class ButtonWithGetAction extends React.Component {
                     // 'Accept': 'application/json, text/plain, */*',
                     // 'Content-Type': 'application/json',
                     // 'Access-Control-Allow-Origin': '*',
-                    'X-Auth-Token': token
+                    "X-AUTH-TOKEN": token
                     // 'XSRF_TOKEN': csrf_token
                     // 'csrf_token': 'fake_token'
                 },
                 // credentials:"include",
-                body: JSON.stringify(cart)
-                , mode: 'cors'
+                body: JSON.stringify(cart),
+                // mode: 'cors'
             })
-        .then(results => {
-            console.log(results)
-            return results.json();
-        })
-        .then(data => {
-            console.log(data);
-        })
-        .catch(error => {
-            console.log(error);
-        })
-        ;
+            .then(function(data) {console.log(data)})
+            .catch(error => {
+                console.log(error);
+            });
         // localStorage.setItem('cart', JSON.stringify(cart));
     }
 
