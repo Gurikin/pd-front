@@ -29,8 +29,6 @@ class Cart extends React.Component {
             let cartProduct = new CartProduct(this.state.products[index]);
             cartProduct.incrementQuantity();
             this.state.products[index] = cartProduct;
-            // this.state.products[index].incrementQuantity();
-            // console.log(this.state.products[index]);
         } else {
             let index = this.findProductIndex(id);
             let cartProduct = new CartProduct(product);
