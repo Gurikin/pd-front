@@ -25,36 +25,30 @@ class ButtonWithGetAction extends React.Component {
     }
 
     async addToCart(id) {
-        // Axios.defaults.headers['X-Requested-With'] = 'XMLHttpRequest'; //.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
         let oldCart = JSON.parse(localStorage.getItem('cart'));
-        // console.log('cart before adding ' + localStorage.getItem('cart'));
         let cart = new Cart(oldCart);
         let product = new Product(this.state.product.props);
         cart.addProduct(product);
         const baseUrl = 'http://pd.loc/';
-        // let response = await Axios.post(baseUrl + 'api/v1/cart/add/' + id,JSON.stringify(cart));
         let token = (await Axios.get(baseUrl)).data;
         console.log(token);
 
-        await fetch(baseUrl + 'api/v1/cart/add/' + id,
-            {
-                method: "post",
-                headers: {
-                    // 'Accept': 'application/json, text/plain, */*',
-                    // 'Content-Type': 'application/json',
-                    // 'Access-Control-Allow-Origin': '*',
-                    "X-AUTH-TOKEN": token
-                    // 'XSRF_TOKEN': csrf_token
-                    // 'csrf_token': 'fake_token'
-                },
-                // credentials:"include",
-                body: JSON.stringify(cart),
-                // mode: 'cors'
-            })
-            .then(function(data) {console.log(data)})
-            .catch(error => {
-                console.log(error);
-            });
+        let p = Axios.post(baseUrl + 'api/v1/cart/add/' + id, JSON.stringify(cart), {headers: {"X-AUTH-TOKEN": token}});
+        console.log(p);
+
+
+        // await fetch(baseUrl + 'api/v1/cart/add/' + id,
+        //     {
+        //         method: "post",
+        //         headers: {
+        //             "X-AUTH-TOKEN": token
+        //         },
+        //         body: JSON.stringify(cart),
+        //     })
+        //     .then(function(data) {console.log(data)})
+        //     .catch(error => {
+        //         console.log(error);
+        //     });
         // localStorage.setItem('cart', JSON.stringify(cart));
     }
 
