@@ -13,6 +13,20 @@ class App extends React.Component {
         super(props);
     }
 
+    async componentDidMount() {
+        window.baseUrl = 'http://pd.loc/api/v1/';
+        if (typeof localStorage.getItem('token') == 'undefined' || localStorage.getItem('token') == null) {
+            let token = await fetch(window.baseUrl + 'get-token').then(response => { return response.text() });
+            if (typeof token !== 'undefined') {
+                localStorage.setItem('token', token);
+            }
+            console.log('token is ' + token);
+        } else {
+            let token = localStorage.getItem('token');
+            console.log(token);
+        }
+    }
+
     render() {
         return (
             <Router>
