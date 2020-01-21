@@ -29,11 +29,20 @@ class ButtonWithGetAction extends React.Component {
         let cart = new Cart(oldCart);
         let product = new Product(this.state.product.props);
         cart.addProduct(product);
-        const baseUrl = 'http://pd.loc/';
-        let token = (await Axios.get(baseUrl)).data;
-        console.log(token);
 
-        let p = Axios.post(baseUrl + 'api/v1/cart/add/' + id, JSON.stringify(cart), {headers: {"X-AUTH-TOKEN": token}});
+        let p = await Axios.post(
+            localStorage.getItem('baseUrl') + 'cart/add/' + id,
+            {
+                'cart': JSON.stringify(cart),
+                '_token': localStorage.getItem('token')
+            },
+            {
+                headers: {
+                    // 'Accept': 'application/json'
+                    'X-CSRF-TOKEN': localStorage.getItem('token')
+                },
+            });
+        console.log('p = ');
         console.log(p);
 
 

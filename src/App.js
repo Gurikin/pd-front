@@ -1,6 +1,7 @@
 import React from 'react';
 import './css/style.css'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Axios from "axios";
 import Header from './components/Header'
 import Shop from './components/pages/Shop'
 import Cart from './components/pages/Cart'
@@ -14,9 +15,10 @@ class App extends React.Component {
     }
 
     async componentDidMount() {
-        window.baseUrl = 'http://pd.loc/api/v1/';
+        Axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+        localStorage.setItem('baseUrl','http://pd.loc/api/v1/');
         if (typeof localStorage.getItem('token') == 'undefined' || localStorage.getItem('token') == null) {
-            let token = await fetch(window.baseUrl + 'get-token').then(response => { return response.text() });
+            let token = await Axios(localStorage.getItem('baseUrl') + 'get-token').then(response => { return response.data });
             if (typeof token !== 'undefined') {
                 localStorage.setItem('token', token);
             }
